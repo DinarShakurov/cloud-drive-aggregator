@@ -1,0 +1,56 @@
+bot:
+  path: bot${bot.token}
+  webhookUrl: https://1e05-178-204-190-21.eu.ngrok.io
+  username: CloudDriveAggregator_Bot
+yandex:
+  client_id: ef04a73152004a64978c2f86b5d70825
+dropbox:
+  app_key: uoh1uauxp80c2r6
+google:
+  client_id: random
+
+server.port: 8080
+
+
+spring:
+  application.name: telegram-bot
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/diploma}
+    username: ${POSTGRES_USERNAME:tfuser}
+    password: ${POSTGRES_USERNAME:tfuser}
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    default-schema: diploma
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc.batch_size: 10
+        default_schema: diploma
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        generate_statistics: false
+        format_sql: true
+        order_updates: true
+        order_inserts: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          client:
+            RestTemplate: DEBUG
+      hibernate:
+        SQL: debug
+        type.descriptor.sql.BasicBinder: TRACE
+
