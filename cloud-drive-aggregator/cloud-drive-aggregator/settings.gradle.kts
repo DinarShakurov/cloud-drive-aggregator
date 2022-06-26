@@ -1,1 +1,1 @@
-rootProject.name = "cloud-drive-agregator"
+rootProject.name = "cloud-drive-aggregator"
