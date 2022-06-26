@@ -48,8 +48,8 @@ dependencies {
     implementation("org.telegram:telegrambots-spring-boot-starter:6.0.1")
 
     // algo
-    //implementation("com.google.ortools:ortools-java:9.3.10497")
-    //implementation("com.google.ortools:ortools-darwin:8.2.9004")
+    implementation("com.google.ortools:ortools-java:9.3.10497")
+    implementation("com.google.ortools:ortools-darwin:8.2.9004")
 
 
     // test
